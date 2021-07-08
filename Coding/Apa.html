@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+      
+    .btn {
+      background-color: cornflowerblue;
+      display: inline-block;
+      margin-block-end: 0.5rem;
+      width: 100px;
+      height: 100px;
+    }
+   
+  
+  
+    .a-slide {
+      --animdur: 3s;
+      --animn: slide;
+    }
+    [data-animation] {
+      animation: var(--animn, none) var(--animdur, 0s) var(--animtf, linear) var(--animdel, 0s) var(--animic, infinite) var(--animdir, alternate) var(--animfm, none) var(--animps, running);
+    }
+
+    /* KEYFRAMES */
+
+    @keyframes slide {
+      from { margin-left: 0%; }
+      to { margin-left: calc(100% - var(--w, 150px)); }
+    }
+    </style>
+
+</head>
+
+<body>
+          
+   <img id="js-toggle" class="btn a-slide" data-animation="stop">
+</body>
+
+<script>
+   const jstoggle = document.getElementById('js-toggle');
+  jstoggle.addEventListener('mouseover', () => {
+    const animations = document.querySelectorAll('[data-animation');
+    animations.forEach(animation => {
+      const paused = getComputedStyle(animation).getPropertyValue("--animps") || 'paused';
+      animation.style.setProperty('--animps', paused === 'paused' ? 'paused' : 'running');
+    })
+  });
+
+
+  </script>
+
+
+</html>
