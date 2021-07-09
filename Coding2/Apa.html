@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  
+    <style>
+#animation img {
+    display: none;
+}
+#animation img:first-child {
+    display: block;
+}
+    </style>
+
+</head>
+
+<body>
+  <div id="animation"> 
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging01.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging02.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging03.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging04.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging05.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging06.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging07.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging08.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging09.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging10.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging11.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging12.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging13.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging14.png" />
+    <img src="http://jumpingfishes.com/dancingpurpleunicorns/charging15.png" />
+</div>
+
+</body>
+
+<script>
+onload = function startAnimation() { 
+    var frames = document.getElementById("animation").children;
+    var frameCount = frames.length;
+    var i = 0;
+    var myInterval=setInterval(function () { 
+       if(i==frameCount-2){
+         clearInterval(myInterval);
+        }
+        frames[i % frameCount].style.display = "none";
+        frames[++i % frameCount].style.display = "block";
+        
+    }, 100); 
+}
+
+
+var elem = document.querySelector('animation'),
+  gif  = new onload(elem, frames, 60);
+
+
+elem.addEventListener('mouseenter', function(){
+  gif.pause();
+});
+
+elem.addEventListener('mouseleave', function() {
+  gif.resume();
+});
+
+</script>
+
+</html>
