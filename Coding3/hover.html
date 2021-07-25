@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">  <title>Portofolio Ara</title>
+  <link rel="stylesheet" type="text/css" href="hover.css" />
+  <script src="https://unpkg.com/freezeframe/dist/freezeframe.min.js"></script>
+
+</head>
+<body>
+  <div class="myself"></div>
+    <a href="#aboutme">
+      <img onmouseover = "changePic1()" onmouseout= "changePic22()"
+      id="orang" class="ara a-slide" data-animation="stop" src="ara.gif" >
+    </a>
+  </div>
+  
+      <div class="wallart">
+      <a href="#sec-2">
+        <img onmouseover = "changeart()" onmouseout= "changeart2()" 
+        id="art" src="art.gif" >
+        <img onmouseover = "changeartsmall1()" onmouseout= "changeartsmall2()" 
+        id="smallart" src="lukisan-satu.gif" >
+      </a>
+    </div>
+      
+      <div class="tele">
+      <a href="#sec-3">
+        <img onmouseenter = "changetelephone()" onmouseout= "changetelephone2()" 
+        id="telephone" src="telepon.gif" >
+      </a> 
+    </div>
+  
+
+
+<script type="text/javascript">
+document.getElementById('orang').src="ara.gif?a="+Math.random()
+
+const jstoggle = document.getElementById('orang');
+  jstoggle.addEventListener('mouseover', () => {
+    const animations = document.querySelectorAll('[data-animation');
+    animations.forEach(animation => {
+      const paused = getComputedStyle(animation).getPropertyValue("--animps") || 'paused';
+      animation.style.setProperty('--animps', paused === 'paused' ? 'paused' : 'running');
+    })
+  });
+
+
+function changePic1() {
+document.getElementById("orang").src = "transparent.gif";
+}
+function changePic22(){
+document.getElementById("orang").src = "ara3.gif";
+}
+   
+function changeart() {
+document.getElementById("art").src = "transparent.gif";
+}
+   
+function changeart2() {
+document.getElementById("art").src = "art.gif";
+}
+
+function changeartsmall1() {
+document.getElementById("smallart").src = "transparent.gif";
+}
+
+function changeartsmall2() {
+document.getElementById("smallart").src = "lukisan-satu.gif";
+}
+
+
+function changetelephone() {
+document.getElementById("telephone").src = "transparent.gif";
+}
+   
+function changetelephone2() {
+document.getElementById("telephone").src = "telepon.gif";
+}
+</script>
+      
+
+</body>
+</html>
